@@ -1505,6 +1505,17 @@
                         'newIndex': newIndex,
                         stack: self.initialPreviewConfig
                     });
+                    //fixme
+                    $.ajax({
+                        url: 'sort-pictures',
+                        type: 'POST',
+                        dataType: 'json',
+                        data: {
+                            productId: $(e.item).find('.kv-file-remove').data('key'),
+                            oldIndex: oldIndex,
+                            newIndex: newIndex
+                        }
+                    });
                 }
             };
             if ($el.data('kvsortable')) {
